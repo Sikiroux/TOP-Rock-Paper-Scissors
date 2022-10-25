@@ -20,20 +20,35 @@ function getComputerChoice() {
 // and computerSelection then return the winner. the function need to be case sensitive
 
 function playRound(playerSelection, computerSelection) {
-    computerSelection = getComputerChoice
-    
+    computerSelection = getComputerChoice()
+    playerSelection = playerInput()
+    console.log(playerSelection)
+    console.log(computerSelection)
     if (playerSelection === computerSelection) {
-        return `Both player made the same move ${computerSelection}`
+        return `Both player made the same move ${computerSelection}`;
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        return `You chosed ${playerSelection} and won`
+        return `You chosed ${playerSelection} and won`;
     } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        return `You chosed ${playerSelection} and won`
+        return `You chosed ${playerSelection} and won`;
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        return `You chosed ${playerSelection} and won`
+        return `You chosed ${playerSelection} and won`;
     }  else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        return `You chosed ${playerSelection} and lost`
+        return `You chosed ${playerSelection} and lost`;
     } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        return `You chosed ${playerSelection} and lost`
+        return `You chosed ${playerSelection} and lost`;
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        return `You chosed ${playerSelection} and lost`
+        return `You chosed ${playerSelection} and lost`;
+    }
+}
+
+function playerInput() {
+    let getInput = prompt("Make a choice Rock, Paper, Scissors");
+    let input = getInput.toLowerCase();
+    return input.charAt(0).toUpperCase() + input.slice(1)
+}
+
+function game() {
+    for (let x = 0; x < 5; x++) {
+        playRound()
+    }
 }
