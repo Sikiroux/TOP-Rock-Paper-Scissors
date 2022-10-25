@@ -25,30 +25,34 @@ function playRound(playerSelection, computerSelection) {
     console.log(playerSelection)
     console.log(computerSelection)
     if (playerSelection === computerSelection) {
-        return `Both player made the same move ${computerSelection}`;
+        console.log(`Both player made the same move ${computerSelection}`);
+        
     } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        return `You chosed ${playerSelection} and won`;
+        console.log(`You chosed ${playerSelection} and won`);
     } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        return `You chosed ${playerSelection} and won`;
+        console.log(`You chosed ${playerSelection} and won`);
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        return `You chosed ${playerSelection} and won`;
+        console.log(`You chosed ${playerSelection} and won`);
     }  else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        return `You chosed ${playerSelection} and lost`;
+        console.log(`You chosed ${playerSelection} and lost`);
     } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        return `You chosed ${playerSelection} and lost`;
+        console.log(`You chosed ${playerSelection} and lost`);
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        return `You chosed ${playerSelection} and lost`;
+        console.log(`You chosed ${playerSelection} and lost`);
     }
 }
 
+//Get input from player through a prompt
 function playerInput() {
     let getInput = prompt("Make a choice Rock, Paper, Scissors");
     let input = getInput.toLowerCase();
     return input.charAt(0).toUpperCase() + input.slice(1)
 }
 
+//Function to play 5 rounds
 function game() {
-    for (let x = 0; x < 5; x++) {
-        playRound()
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        
     }
 }
